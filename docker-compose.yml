@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  servicio_info:
+    build: ./servicio_info
+    ports:
+      - "5000:5000"
+    networks:
+      - mi_red
+
+  servicio_usuarios:
+    build: ./servicio_usuarios
+    ports:
+      - "5001:5001"
+    networks:
+      - mi_red
+
+networks:
+  mi_red:
+
+    #docker-compose up --build
+    #http://localhost:5001/usuarios
