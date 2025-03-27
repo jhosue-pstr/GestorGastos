@@ -8,12 +8,12 @@ services:
     networks:
       - mi_red
 
-  servicio_usuarios:
-    build: ./servicio_usuarios
-    ports:
-      - "5001:5001"
-    networks:
-      - mi_red
+  #servicio_usuarios:
+   # build: ./servicio_usuarios
+    #ports:
+     # - "5001:5001"
+    #networks:
+    #  - mi_red
 
 networks:
   mi_red:
