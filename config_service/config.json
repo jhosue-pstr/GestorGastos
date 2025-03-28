@@ -1,0 +1,5 @@
+{
+    "database_url": "mysql://user:password@db:3306/gestor_gastos",
+    "api_key": "123456789abcdef",
+    "allowed_origins": ["http://localhost:3000"]
+}

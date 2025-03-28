@@ -1,22 +1,50 @@
-version: '3'
+version: '3.8'
 
 services:
-  servicio_info:
-    build: ./servicio_info
+  mysql_db:
+    image: mysql:8.0
+    container_name: mysql_gestorgastos
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "SuperPassword123"  # Contraseña del usuario root
+      MYSQL_DATABASE: default_db  # Base de datos inicial (pero se crearán otras)
+      MYSQL_USER: "admin"  # Usuario regular
+      MYSQL_PASSWORD: "AdminPassword123"  # Contraseña del usuario regular
     ports:
-      - "5000:5000"
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d  # Ejecutará scripts SQL en inicio
     networks:
-      - mi_red
+      - my_network
 
-  #servicio_usuarios:
-   # build: ./servicio_usuarios
-    #ports:
-     # - "5001:5001"
-    #networks:
-    #  - mi_red
+  config_service:
+    build: ./config_service
+    container_name: config_service
+    ports:
+      - "5001:5001"
+    depends_on:
+      - mysql_db
+    environment:
+      DATABASE_URL: "mysql://admin:AdminPassword123@mysql_db/config_db"  # Base de datos de nombres
+    networks:
+      - my_network
+
+  microservicio1:
+    build: ./microservicio1
+    container_name: microservicio1
+    ports:
+      - "5002:5002"
+    depends_on:
+      - mysql_db
+      - config_service
+    environment:
+      DATABASE_URL: "mysql://admin:AdminPassword123@mysql_db/micro1_db"  # Base de datos de apellidos
+    networks:
+      - my_network
 
 networks:
-  mi_red:
+  my_network:
 
-    #docker-compose up --build
-    #http://localhost:5001/usuarios
+volumes:
+  mysql_data:
