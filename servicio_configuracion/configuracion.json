@@ -14,5 +14,9 @@
     "servicio_reportes": {
         "PUERTO": 5005,
         "MENSAJE_BIENVENIDA": "Bienvenido al servicio de reportes"
-    }
+    },
+    "servicio_catalogo": {
+    "PUERTO": 5006,
+    "MENSAJE_BIENVENIDA": "Bienvenido al servicio de catalogo"
 }
+    }
