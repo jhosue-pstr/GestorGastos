@@ -1,0 +1,18 @@
+{
+    "servicio_cuentas": {
+        "PUERTO": 5002,
+        "MENSAJE_BIENVENIDA": "Bienvenido al servicio de cuentas"
+    },
+    "servicio_autenticacion": {
+        "PUERTO": 5003,
+        "MENSAJE_BIENVENIDA": "Bienvenido al servicio de autenticación"
+    },
+    "servicio_facturacion": {
+        "PUERTO": 5004,
+        "MENSAJE_BIENVENIDA": "Bienvenido al servicio de facturación"
+    },
+    "servicio_reportes": {
+        "PUERTO": 5005,
+        "MENSAJE_BIENVENIDA": "Bienvenido al servicio de reportes"
+    }
+}
