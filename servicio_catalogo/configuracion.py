@@ -1,4 +1,6 @@
 import requests
+import os
+
 
 CONFIG_URL = "http://localhost:5001/configuracion"
 

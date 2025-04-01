@@ -18,5 +18,5 @@
     "servicio_catalogo": {
     "PUERTO": 5006,
     "MENSAJE_BIENVENIDA": "Bienvenido al servicio de catalogo"
-}
     }
+}
