@@ -1,22 +1,10 @@
 {
-    "servicio_cuentas": {
-        "PUERTO": 5002,
-        "MENSAJE_BIENVENIDA": "Bienvenido al servicio de cuentas"
-    },
-    "servicio_autenticacion": {
-        "PUERTO": 5003,
-        "MENSAJE_BIENVENIDA": "Bienvenido al servicio de autenticación"
-    },
-    "servicio_facturacion": {
-        "PUERTO": 5004,
-        "MENSAJE_BIENVENIDA": "Bienvenido al servicio de facturación"
-    },
-    "servicio_reportes": {
-        "PUERTO": 5005,
-        "MENSAJE_BIENVENIDA": "Bienvenido al servicio de reportes"
-    },
-    "servicio_catalogo": {
+    "servicio_categoria": {
+        "PUERTO": 5007,
+        "MENSAJE_BIENVENIDA": "Bienvenido al servicio de categoria"
+        },
+    "servicio_producto": {
     "PUERTO": 5006,
-    "MENSAJE_BIENVENIDA": "Bienvenido al servicio de catalogo"
+    "MENSAJE_BIENVENIDA": "Bienvenido al servicio de producto"
     }
 }

@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block title %}Resultados de búsqueda{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Resultados de búsqueda</h3>
+  <button
+    class="btn btn-primary rounded-pill px-3"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#agregarModal"
+  >
+    Agregar
+  </button>
+</div>
+
+{% if categorias %}
+<p>Mostrando resultados para: "<strong>{{ busqueda }}</strong>"</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha de Creación</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for categoria in categorias %}
+    <tr>
+      <td>{{ categoria.nombre }}</td>
+      <td>{{ categoria.fecha_creacion }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No se encontraron categorías para "<strong>{{ busqueda }}</strong>".</p>
+{% endif %} {% endblock %}

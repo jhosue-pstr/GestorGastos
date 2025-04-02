@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block title %}Lista de Categorías{% endblock %} {%
+block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Resultados de búsqueda</h3>
+  <button
+    class="btn btn-primary rounded-pill px-3"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#agregarModal"
+  >
+    Agregar
+  </button>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha de Creación</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for categoria in categorias %}
+    <tr>
+      <td>{{ categoria.nombre }}</td>
+      <td>{{ categoria.fecha_creacion }}</td>
+      <td>
+        <a
+          href="{{ url_for('eliminar', id=categoria.id) }}"
+          class="btn btn-danger btn-sm"
+          >Eliminar</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
