@@ -10,7 +10,6 @@ def obtener_configuracion():
         if respuesta.status_code == 200:
             configuracion = respuesta.json()
             
-            # 🔹 Agregamos los datos de MySQL si es el servicio de catálogo
             if "servicio_producto" in configuracion:
                 configuracion["servicio_producto"]["MYSQL"] = {
                     "host": "127.0.0.1",
